@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plant-Based Meal Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-neutral-50 text-neutral-900 antialiased font-[Inter]">
+  <!-- Nav -->
+  <header class="border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-tr from-green-600 via-emerald-600 to-teal-600 text-white">
+          <i data-lucide="leaf" class="h-5 w-5"></i>
+        </span>
+        <span class="text-lg font-semibold tracking-tight">Meal Planner</span>
+      </div>
+      <nav class="flex items-center gap-4">
+        <a href="/" class="text-sm font-medium text-green-600">Meal Planner</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-6 pt-10 pb-8">
+    <div class="relative overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-tr from-green-600 via-emerald-600 to-teal-600">
+      <div class="absolute inset-0 opacity-20">
+        <img alt="Fresh vegetables" class="h-full w-full object-cover"
+             src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=2000&auto=format&fit=crop" />
+      </div>
+      <div class="relative grid gap-6 p-8 md:grid-cols-3 md:p-12">
+        <div class="md:col-span-2">
+          <h1 class="text-white text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+            Plan Your Perfect Plant-Based Meals
+          </h1>
+          <p class="mt-3 text-green-100/90 text-base md:text-lg">
+            Get personalized weekly meal plans, balanced nutrition, and organized grocery lists for your plant-based lifestyle.
+          </p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-white text-sm">
+              <i data-lucide="heart" class="h-4 w-4"></i>
+              Healthy meals
+            </div>
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-white text-sm">
+              <i data-lucide="clock" class="h-4 w-4"></i>
+              Save time
+            </div>
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-white text-sm">
+              <i data-lucide="shopping-cart" class="h-4 w-4"></i>
+              Smart shopping
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="relative h-full w-full rounded-xl bg-white/10 p-4 ring-1 ring-white/20 backdrop-blur">
+            <img alt="Colorful plant-based meal" class="h-full w-full rounded-lg object-cover"
+                 src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop" />
+            <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 text-white text-xs">
+              <i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Delicious & Healthy
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature cards -->
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-green-100 text-green-700">
+            <i data-lucide="search" class="h-5 w-5"></i>
+          </span>
+          <div>
+            <div class="font-semibold tracking-tight">Recipe Research</div>
+            <p class="text-sm text-neutral-600">Find perfect plant-based recipes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-green-100 text-green-700">
+            <i data-lucide="activity" class="h-5 w-5"></i>
+          </span>
+          <div>
+            <div class="font-semibold tracking-tight">Nutrition Balance</div>
+            <p class="text-sm text-neutral-600">Ensure complete nutrition daily.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-green-100 text-green-700">
+            <i data-lucide="calendar" class="h-5 w-5"></i>
+          </span>
+          <div>
+            <div class="font-semibold tracking-tight">Meal Planning</div>
+            <p class="text-sm text-neutral-600">Weekly schedules with prep times.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-green-100 text-green-700">
+            <i data-lucide="shopping-cart" class="h-5 w-5"></i>
+          </span>
+          <div>
+            <div class="font-semibold tracking-tight">Smart Shopping</div>
+            <p class="text-sm text-neutral-600">Organized grocery lists by store section.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      <!-- Input Form -->
+      <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-semibold tracking-tight">Tell us about your preferences</h2>
+        <p class="mt-2 text-neutral-600">We'll create a personalized meal plan just for you.</p>
+        
+        <form id="meal-form" class="mt-8 space-y-6">
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div>
+              <label for="dietary-preference" class="block text-sm font-medium text-neutral-700 mb-2">
+                Dietary Preference *
+              </label>
+              <select id="dietary-preference" name="dietary_preference" required 
+                      class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="">Select your diet</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="plant-based">Plant-Based</option>
+                <option value="flexitarian">Flexitarian</option>
+                <option value="gluten-free vegan">Gluten-Free Vegan</option>
+                <option value="raw vegan">Raw Vegan</option>
+              </select>
+            </div>
+            <div>
+              <label for="duration" class="block text-sm font-medium text-neutral-700 mb-2">
+                Planning Duration *
+              </label>
+              <select id="duration" name="duration" required 
+                      class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="">Select duration</option>
+                <option value="3 days">3 Days</option>
+                <option value="1 week">1 Week</option>
+                <option value="2 weeks">2 Weeks</option>
+                <option value="1 month">1 Month</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div>
+              <label for="budget" class="block text-sm font-medium text-neutral-700 mb-2">
+                Budget Range
+              </label>
+              <select id="budget" name="budget" 
+                      class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="budget">Budget-Friendly</option>
+                <option value="moderate" selected>Moderate</option>
+                <option value="premium">Premium</option>
+              </select>
+            </div>
+            <div>
+              <label for="family-size" class="block text-sm font-medium text-neutral-700 mb-2">
+                Family Size
+              </label>
+              <select id="family-size" name="family_size" 
+                      class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="1">Just Me</option>
+                <option value="2" selected>2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5+ People</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="allergies" class="block text-sm font-medium text-neutral-700 mb-2">
+              Allergies & Restrictions
+            </label>
+            <input type="text" id="allergies" name="allergies" placeholder="e.g., nuts, soy, gluten"
+                   class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500" />
+          </div>
+
+          <div>
+            <label for="cuisine-preferences" class="block text-sm font-medium text-neutral-700 mb-2">
+              Cuisine Preferences
+            </label>
+            <input type="text" id="cuisine-preferences" name="cuisine_preferences" placeholder="e.g., Mediterranean, Asian, Mexican"
+                   class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500" />
+          </div>
+
+          <div>
+            <label for="cooking-time" class="block text-sm font-medium text-neutral-700 mb-2">
+              Preferred Cooking Time
+            </label>
+            <select id="cooking-time" name="cooking_time" 
+                    class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+              <option value="15-30 minutes">Quick (15-30 min)</option>
+              <option value="30-60 minutes" selected>Medium (30-60 min)</option>
+              <option value="60+ minutes">Long (60+ min)</option>
+            </select>
+          </div>
+
+          <button type="submit" id="plan-button"
+                  class="w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-3 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+            <span class="flex items-center justify-center gap-2">
+              <i data-lucide="chef-hat" class="h-5 w-5"></i>
+              Plan My Meals
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm">
+        <div class="border-b border-neutral-200 p-6">
+          <h3 class="text-lg font-semibold tracking-tight">Your Personalized Meal Plan</h3>
+          <p class="mt-1 text-sm text-neutral-600">Complete meal plan with recipes and shopping list</p>
+        </div>
+        
+        <div id="results" class="p-6">
+          <div class="flex flex-col items-center justify-center py-12 text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 mb-4">
+              <i data-lucide="utensils" class="h-6 w-6"></i>
+            </div>
+            <p class="text-neutral-500">Fill out the form to generate your meal plan</p>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden p-6">
+          <div class="flex flex-col items-center justify-center py-12 text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 mb-4 animate-pulse">
+              <i data-lucide="chef-hat" class="h-6 w-6"></i>
+            </div>
+            <p class="text-neutral-600 font-medium">Creating your meal plan...</p>
+            <p class="text-sm text-neutral-500 mt-1">This may take 10-15 seconds</p>
+            
+            <div class="mt-4 flex items-center gap-2 text-xs text-neutral-400">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-bounce" style="animation-delay: 0.3s;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden p-6">
+          <div class="flex flex-col items-center justify-center py-12 text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-600 mb-4">
+              <i data-lucide="alert-circle" class="h-6 w-6"></i>
+            </div>
+            <p class="text-red-600 font-medium">Unable to create meal plan</p>
+            <p class="text-sm text-neutral-500 mt-1">Please try again or check your inputs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Form submission handler
+    document.getElementById('meal-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading state
+      document.getElementById('results').classList.add('hidden');
+      document.getElementById('error').classList.add('hidden');
+      document.getElementById('loading').classList.remove('hidden');
+      
+      // Disable submit button
+      const button = document.getElementById('plan-button');
+      button.disabled = true;
+      button.innerHTML = '<span class="flex items-center justify-center gap-2"><i data-lucide="loader-2" class="h-5 w-5 animate-spin"></i>Planning...</span>';
+      lucide.createIcons();
+
+      try {
+        // Collect form data
+        const formData = new FormData(e.target);
+        const requestData = {
+          dietary_preference: formData.get('dietary_preference'),
+          duration: formData.get('duration'),
+          budget: formData.get('budget') || 'moderate',
+          allergies: formData.get('allergies') || null,
+          cuisine_preferences: formData.get('cuisine_preferences') || null,
+          cooking_time: formData.get('cooking_time') || '30-60 minutes',
+          family_size: parseInt(formData.get('family_size')) || 2
+        };
+
+        // Make API request
+        const response = await fetch('/plan-meals', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestData)
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        // Hide loading and show results
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('results').classList.remove('hidden');
+        
+        // Render the meal plan using marked.js
+        document.getElementById('results').innerHTML = `
+          <div class="prose prose-neutral max-w-none">
+            ${marked.parse(result.result)}
+          </div>
+          
+          ${result.grocery_list ? `
+            <div class="mt-8 border-t border-neutral-200 pt-6">
+              <h4 class="text-lg font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="h-5 w-5 text-green-600"></i>
+                Shopping List
+              </h4>
+              <div class="prose prose-neutral max-w-none">
+                ${marked.parse(result.grocery_list)}
+              </div>
+            </div>
+          ` : ''}
+          
+          ${result.nutritional_info ? `
+            <div class="mt-8 border-t border-neutral-200 pt-6">
+              <h4 class="text-lg font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+                <i data-lucide="activity" class="h-5 w-5 text-green-600"></i>
+                Nutritional Guide
+              </h4>
+              <div class="prose prose-neutral max-w-none">
+                ${marked.parse(result.nutritional_info)}
+              </div>
+            </div>
+          ` : ''}
+        `;
+        
+        // Reinitialize icons
+        lucide.createIcons();
+        
+      } catch (error) {
+        console.error('Error:', error);
+        
+        // Hide loading and show error
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('error').classList.remove('hidden');
+      } finally {
+        // Re-enable submit button
+        button.disabled = false;
+        button.innerHTML = '<span class="flex items-center justify-center gap-2"><i data-lucide="chef-hat" class="h-5 w-5"></i>Plan My Meals</span>';
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
