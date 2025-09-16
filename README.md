@@ -1,4 +1,4 @@
-# AI Trip Planner
+# AI Meal Planner
 
 Fast, sequential trip planning with FastAPI (backend), React (frontend), and LangGraph for orchestration. Optional Arize tracing is supported.
 
